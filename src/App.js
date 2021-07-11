@@ -1,24 +1,22 @@
+// Hubungakan redux dan aplikasi
+import { Provider } from 'react-redux'
+
+// Import storenya
+import store from './store/index'
+
+
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Bungkus dengan tag Provider
+    <Provider store={store}>
+      <div className="App">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Belajar Redux</h2>
+      </div>
+    </Provider>
   );
 }
 
