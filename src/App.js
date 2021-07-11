@@ -7,6 +7,7 @@ import store from './store/index'
 
 import logo from './logo.svg';
 import './App.css';
+import Todos from './components/Todos';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <div className="App">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Belajar Redux</h2>
+          <Todos />
       </div>
     </Provider>
   );
