@@ -9,6 +9,7 @@ import logo from './logo.svg';
 import './App.css';
 import Todos from './components/Todos';
 import Form from './components/Form';
+import Product from './components/Product';
 
 const App = () => {
   return (
@@ -22,9 +23,23 @@ const App = () => {
           <div>
             <Form />
           </div>
+
+          <div style={ productStyle }>
+            <h1>Daftar Barang</h1>
+
+            <Product />
+          </div>
       </div>
     </Provider>
   );
+}
+
+const productStyle = {
+  marginTop: "5rem",
+  width: "50%",
+  background: "blue",
+  padding: "2rem 0",
+  color: "#FFF",
 }
 
 export default App;

@@ -2,7 +2,7 @@ import React from 'react'
 
 // use selector
 import { useSelector, useDispatch } from 'react-redux';
-import { del } from '../store';
+import { del } from '../store/actions/lists';
 
 const Todos = () => {
 
