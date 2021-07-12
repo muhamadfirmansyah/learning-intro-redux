@@ -1,17 +1,27 @@
 import React from 'react'
 
 // use selector
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { del } from '../store';
 
 const Todos = () => {
 
     const todos = useSelector(state => state.lists.todos)
 
+    const dispatch = useDispatch()
+
+    const deleteData = (id) => {
+        dispatch(del(id))
+    }
+
     return (
         <div>
             <ul>
                 { todos.map(item => (
-                    <li key={ item.id }>{ item.title }</li>
+                    <li key={ item.id }>
+                        { item.title }
+                        <button onClick={() => deleteData(item.id)}>x</button>
+                    </li>
                 )) }
             </ul>
         </div>

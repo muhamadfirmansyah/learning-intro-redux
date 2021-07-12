@@ -11,6 +11,13 @@ export const add = (title) => {
     }
 }
 
+export const del = (id) => {
+    return {
+        type: 'DEL',
+        payload: id
+    }
+}
+
 // Buat Initial State
 const initialState = {
     todos: [
@@ -37,6 +44,12 @@ const listReducer = (state = initialState, action) => {
             return {
                 ...state,
                 todos: [...state.todos, newItem]
+            }
+        
+        case "DEL":
+            return {
+                ...state,
+                todos: state.todos.filter(item => item.id !== payload)
             }
 
         default:
